@@ -37,7 +37,7 @@ export default class Home extends React.Component {
           }
         </div>
         <div>
-          <StudentList studentListItems={studentData} getStudentList={this.getStudentList}/>
+          <StudentList homeState={this.state.homePage} studentListItems={studentData} getStudentList={this.getStudentList}/>
         </div>
       </div>
     );

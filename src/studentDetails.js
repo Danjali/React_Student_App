@@ -8,7 +8,7 @@ export default class StudentDetails extends React.Component {
       <div>
         <a>Student Details</a>
         <div>
-          <h3>Name: {selectedStudent[0].firstName + ' ' +selectedStudent[0].lastName}</h3>
+          <h4>Name: {selectedStudent[0].firstName + ' ' +selectedStudent[0].lastName}</h4>
           <div className="Table">
             <div className="CellHeadings">English</div>
             <div className="CellHeadings">Hindi</div>

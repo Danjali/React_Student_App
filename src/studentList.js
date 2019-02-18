@@ -42,30 +42,33 @@ export default class StudentList extends React.Component {
 
   render() {
     let { data } = this.state;
+    let { homeState } = this.props;
     return (
       <div>
         <a onClick={this.getStudentList}>Student List</a>
         <div>
-          { this.state.studentListState &&
-        <div className="Table">
-          <div className="CellHeadings">First Name</div>
-          <div className="CellHeadings">Last Name</div>
-          <div className="CellHeadings">Percentage</div>
-          {
-            data.map((item,index) => {
-              return (
-                <div className="Row" key={index}>
-                  <div className="Cell" onClick={this.getStudentDetails.bind(this,index)}>{item.firstName}</div>
-                  <div className="Cell">{item.lastName}</div>
-                  <div className="Cell">{item.percentage}</div>
-                </div>
-              );
-            })
-          }
+          { this.state.studentListState && !homeState &&
+        <div><h4>Click on First Name to check the detailed result</h4>
+          <div className="Table">
+            <div className="CellHeadings">First Name</div>
+            <div className="CellHeadings">Last Name</div>
+            <div className="CellHeadings">Percentage</div>
+            {
+              data.map((item,index) => {
+                return (
+                  <div className="Row" key={index}>
+                    <div className="Cell" onClick={this.getStudentDetails.bind(this,index)}>{item.firstName}</div>
+                    <div className="Cell">{item.lastName}</div>
+                    <div className="Cell">{item.percentage}</div>
+                  </div>
+                );
+              })
+            }
+          </div>
         </div>
           }
         </div>
-        { this.state.studentDetails &&
+        { this.state.studentDetails && !homeState &&
         <div>
           <StudentDetails selectedStudent={data}/>
         </div>
