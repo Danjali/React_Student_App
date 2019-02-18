@@ -1,9 +1,6 @@
 import React from 'react';
-
-export default class StudentDetails extends React.Component {
-
-  render(){
-    let { selectedStudent }  = this.props;
+const StudentDetails = (props) => {
+    let { selectedStudent } = props;
     return (
       <div>
         <a>Student Details</a>
@@ -32,5 +29,5 @@ export default class StudentDetails extends React.Component {
         </div>
       </div>
     );
-  }
-}
+};
+export default StudentDetails;

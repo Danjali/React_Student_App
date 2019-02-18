@@ -9,10 +9,10 @@ export default class StudentList extends React.Component {
       studentDetails: false,
       data: []
     };
-    this.getStudentList = this.getStudentList.bind(this);
+    this.getStudentResult = this.getStudentResult.bind(this);
   }
 
-  getStudentList() {
+  getStudentResult() {
     let result = this.props.studentListItems;
     result.forEach((item) => {
       item.totalMarks = (item.marks.english + item.marks.hindi + item.marks.mathematics);
@@ -45,7 +45,7 @@ export default class StudentList extends React.Component {
     let { homeState } = this.props;
     return (
       <div>
-        <a onClick={this.getStudentList}>Student List</a>
+        <a onClick={this.getStudentResult}>Student List</a>
         <div>
           { this.state.studentListState && !homeState &&
         <div><h4>Click on First Name to check the detailed result</h4>
