@@ -29,11 +29,16 @@ export default class Home extends React.Component {
     })
   }
 
-  getStudentDetails(selectedStudentResult) {
+  getStudentDetails(id, selectedStudentResult) {
+    let result = selectedStudentResult.filter((item,key) => {
+      if(key === id){
+        return item;
+      }
+    })
     this.setState({
       homePage: false,
       studentDetailsPage: true,
-      studentData: selectedStudentResult
+      studentData: result
     })
   }
 

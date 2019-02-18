@@ -20,21 +20,21 @@ export default class StudentList extends React.Component {
         studentListState: true,
         data: result
     })
-      this.props.getStudentList(result);
+    // this.props.getStudentList(result);
   }
 
   getStudentDetails(id) {
     let result = this.props.studentListItems;
-    let selectedStudentResult = result.filter((item,key) => {
-      if(key === id){
-        return item;
-      }
-    })
+    // let selectedStudentResult = result.filter((item,key) => {
+    //   if(key === id){
+    //     return item;
+    //   }
+    // })
     this.setState({
         studentListState: false,
         data: result
     })
-    this.props.getStudentDetails(selectedStudentResult);
+    this.props.getStudentDetails(id, result);
   }
 
   render() {

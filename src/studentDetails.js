@@ -2,15 +2,11 @@ import React from 'react';
 
 export default class StudentDetails extends React.Component {
 
-  getStudentDetails(){
-    this.props.getStudentDetails();
-  }
-
   render(){
     let { selectedStudent }  = this.props;
     return (
       <div>
-        <a onClick={this.getStudentDetails.bind(this)}>Student Details</a>
+        <a>Student Details</a>
       <div>
       <h3>Name: {selectedStudent[0].firstName + ' ' +selectedStudent[0].lastName}</h3>
         <div className="Table">
