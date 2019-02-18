@@ -1,10 +1,12 @@
 import React from 'react';
+import StudentDetails from './studentDetails';
 
 export default class StudentList extends React.Component {
   constructor() {
     super();
     this.state = {
       studentListState: false,
+      studentDetails: false,
       data: []
     }
     this.getStudentList = this.getStudentList.bind(this);
@@ -17,24 +19,25 @@ export default class StudentList extends React.Component {
       item.percentage = (( item.totalMarks / 300) * 100).toFixed(2)+'%';
     })
     this.setState({
-        studentListState: true,
-        data: result
+      studentListState: true,
+      studentDetails: false,
+      data: result
     })
-    // this.props.getStudentList(result);
+    this.props.getStudentList(result);
   }
 
   getStudentDetails(id) {
     let result = this.props.studentListItems;
-    // let selectedStudentResult = result.filter((item,key) => {
-    //   if(key === id){
-    //     return item;
-    //   }
-    // })
-    this.setState({
-        studentListState: false,
-        data: result
+    let selectedStudentResult = result.filter((item,key) => {
+      if(key === id){
+        return item;
+      }
     })
-    this.props.getStudentDetails(id, result);
+    this.setState({
+      studentListState: false,
+      studentDetails: true,
+      data: selectedStudentResult
+    })
   }
 
   render() {
@@ -62,6 +65,11 @@ export default class StudentList extends React.Component {
         </div>
       }
       </div>
+      { this.state.studentDetails &&
+        <div>
+        <StudentDetails selectedStudent={data}/>
+        </div>
+      }
       </div>
     )
   }
