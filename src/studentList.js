@@ -8,7 +8,7 @@ export default class StudentList extends React.Component {
       studentListState: false,
       studentDetails: false,
       data: []
-    }
+    };
     this.getStudentList = this.getStudentList.bind(this);
   }
 
@@ -17,12 +17,12 @@ export default class StudentList extends React.Component {
     result.forEach((item) => {
       item.totalMarks = (item.marks.english + item.marks.hindi + item.marks.mathematics);
       item.percentage = (( item.totalMarks / 300) * 100).toFixed(2)+'%';
-    })
+    });
     this.setState({
       studentListState: true,
       studentDetails: false,
       data: result
-    })
+    });
     this.props.getStudentList(result);
   }
 
@@ -32,12 +32,12 @@ export default class StudentList extends React.Component {
       if(key === id){
         return item;
       }
-    })
+    });
     this.setState({
       studentListState: false,
       studentDetails: true,
       data: selectedStudentResult
-    })
+    });
   }
 
   render() {
@@ -45,12 +45,12 @@ export default class StudentList extends React.Component {
     return (
       <div>
         <a onClick={this.getStudentList}>Student List</a>
-      <div>
-      { this.state.studentListState &&
+        <div>
+          { this.state.studentListState &&
         <div className="Table">
-        <div className="CellHeadings">First Name</div>
-        <div className="CellHeadings">Last Name</div>
-        <div className="CellHeadings">Percentage</div>
+          <div className="CellHeadings">First Name</div>
+          <div className="CellHeadings">Last Name</div>
+          <div className="CellHeadings">Percentage</div>
           {
             data.map((item,index) => {
               return (
@@ -59,18 +59,18 @@ export default class StudentList extends React.Component {
                   <div className="Cell">{item.lastName}</div>
                   <div className="Cell">{item.percentage}</div>
                 </div>
-              )
+              );
             })
           }
         </div>
-      }
-      </div>
-      { this.state.studentDetails &&
-        <div>
-        <StudentDetails selectedStudent={data}/>
+          }
         </div>
-      }
+        { this.state.studentDetails &&
+        <div>
+          <StudentDetails selectedStudent={data}/>
+        </div>
+        }
       </div>
-    )
+    );
   }
 }

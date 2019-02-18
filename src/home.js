@@ -8,7 +8,7 @@ export default class Home extends React.Component {
     this.state = {
       homePage: true,
       studentData: Data.results
-    }
+    };
     this.homePageDetails = this.homePageDetails.bind(this);
     this.getStudentList = this.getStudentList.bind(this);
   }
@@ -16,14 +16,14 @@ export default class Home extends React.Component {
   homePageDetails() {
     this.setState({
       homePage: true
-    })
+    });
   }
 
   getStudentList(result) {
     this.setState({
       homePage: false,
       studentData: result
-    })
+    });
   }
 
   render() {
@@ -31,15 +31,15 @@ export default class Home extends React.Component {
     return (
       <div>
         <div>
-        <a onClick={this.homePageDetails}>Students Result App</a>
-        { this.state.homePage &&
+          <a onClick={this.homePageDetails}>Students Result App</a>
+          { this.state.homePage &&
         <h4> Click on Student Link to see the result </h4>
-        }
+          }
         </div>
-          <div>
+        <div>
           <StudentList studentListItems={studentData} getStudentList={this.getStudentList}/>
-          </div>
+        </div>
       </div>
-    )
+    );
   }
 }
