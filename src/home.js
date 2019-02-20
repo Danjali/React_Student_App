@@ -33,7 +33,7 @@ export default class Home extends React.Component {
         <div>
           <a onClick={this.homePageDetails}>Students Result App</a>
           { this.state.homePage &&
-        <h4> Click on Student Link to see the result </h4>
+        <h4> Click on Student List Link to see the result </h4>
           }
         </div>
         <div>
