@@ -31,11 +31,7 @@ export default class StudentList extends React.Component {
 
   getStudentDetails(id) {
     let { data } = this.state;
-    let selectedStudentResult = data.filter((item,key) => {
-      if(key === id){
-        return item;
-      }
-    });
+    let selectedStudentResult = data.filter((item,key) =>  key === id);
     this.setState({
       studentListState: false,
       studentDetails: true,
@@ -55,8 +51,8 @@ export default class StudentList extends React.Component {
   }
 
   render() {
-    let { searchData } = this.state;
-    let { homeState } = this.props;
+    let { searchData } = this.state,
+      { homeState } = this.props;
     return (
       <div>
         <a onClick={this.getStudentResult}>Student List</a>
