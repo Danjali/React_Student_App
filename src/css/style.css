@@ -1,0 +1,55 @@
+body {
+    background-color: #eee;
+    font-family: 'Raleway', sans-serif;
+}
+.h4, h4 {
+    margin-left: 85px;
+    font-weight: 700;
+}
+.studentName{
+    margin-left: 85px;
+}
+.Table {
+    display: table;
+    padding: 0 0 0 85px;
+    table-layout: fixed;
+}
+.Row {
+    display: table-row;
+}
+.listClass {
+    display: table-row;
+}
+.FailedRow {
+    display: table-row;
+    background: red;
+}
+a,span:hover {
+  cursor: pointer;
+}
+.Cell {
+    display: table-cell;
+    border-width: thin;
+    border-top: 1px solid #eee;
+    background: #fff;
+    padding : 14px 10px;
+    min-width: 232px;
+    max-width: 150;
+    font-size: 20px;
+    color: #a9a9a9;
+}
+.CellHeadings {
+    display: table-cell;
+    border-width: thin;
+    border-top: 1px solid #eee;
+    background: #fff;
+    padding : 14px 10px;
+    min-width: 232px;
+    max-width: 150;
+    font-size: 15px;
+    color: #a9a9a9;
+}
+.searchWrapper{
+    margin-left: 85px;
+    font-size: 16px;
+}
