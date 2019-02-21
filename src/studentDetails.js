@@ -5,7 +5,7 @@ const StudentDetails = (props) => {
     <div>
       <a>Student Details</a>
       <div>
-        <h4>Name: {selectedStudent[0].firstName + ' ' +selectedStudent[0].lastName}</h4>
+        <h4>{`Name: ${selectedStudent[0].firstName} ${selectedStudent[0].lastName}`}</h4>
         <div className="Table">
           <div className="CellHeadings">English</div>
           <div className="CellHeadings">Hindi</div>

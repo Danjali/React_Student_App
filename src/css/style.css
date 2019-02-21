@@ -3,7 +3,7 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 .h4, h4 {
-    margin-left: 85px;
+    margin-left: 265px;
     font-weight: 700;
 }
 .studentName{
@@ -11,8 +11,10 @@ body {
 }
 .Table {
     display: table;
-    padding: 0 0 0 85px;
     table-layout: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
 }
 .Row {
     display: table-row;
@@ -49,7 +51,7 @@ a,span:hover {
     font-size: 15px;
     color: #a9a9a9;
 }
-.searchWrapper{
-    margin-left: 85px;
+.SearchWrapper {
+    margin-left: 265px;
     font-size: 16px;
 }
