@@ -26,6 +26,10 @@ body {
     display: table-row;
     background: red;
 }
+.FailedRow .Cell {
+  background-color: red;
+  color: #fff;
+}
 a,span:hover {
   cursor: pointer;
 }
@@ -54,4 +58,8 @@ a,span:hover {
 .SearchWrapper {
     margin-left: 265px;
     font-size: 16px;
+}
+.mainNavigation a {
+  padding: 10px;
+  margin: 10px;
 }
